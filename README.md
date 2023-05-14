@@ -25,28 +25,32 @@ const { API } = require('king-coin-api')
 const api = new API({ token: 'YOUR_TOKEN' }) // Ваш токен
 
 // Получение баланса мерчанта
-async getMyBalance() {
+async function getMyBalance() {
     const balance = await api.getMyBalance() // Получаем баланс
     console.log(balance) // Выводим результат в консоль
 }
+getMyBalance() // Вызов функции
 
 // Получение баланса пользователей
-async getUserBalance() {
+async function getUserBalance() {
     const user_ids = [657023844] // Создаем массив пользователей (до 1000)
     const userBalance = await api.getUserBalance({ user_ids }) // Получаем балансы пользователей
     console.log(userBalance) // Выводим результат в консоль
 }
+getUserBalance() // Вызов функции
 
 // Получение историю переводов
-async getHistory() {
+async function getHistory() {
     const history = await api.getHistory({ filter: "IN", count: 20 }) // Получаем 20 последних пополнений
     console.log(history) // Выводим результат в консоль
 }
+getHistory() // Вызов функции
 
 //Перевод коинов пользователю
-async sendCoins() {
+async function sendCoins() {
     const send = await api.sendCoins({ receiver: 657023844, amount: 1 }) // Делаем перевод 1 коин
     console.log(send) // Выводим результат в консоль
 }
+sendCoins() // Вызов функции
 
 ```
