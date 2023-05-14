@@ -1,0 +1,21 @@
+{
+  "name": "king-coin-api",
+  "version": "1.0.0",
+  "description": "Модуль для удобного использования KingCoin API",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "vk",
+    "king-coin-api",
+    "kingCoin",
+    "Кинг коин",
+    "Вконтакте"
+  ],
+  "author": "AdepT-Hub <adept-hub.ru>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
