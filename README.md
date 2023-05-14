@@ -1,6 +1,9 @@
 <p align=center>
 <img src="https://raw.githubusercontent.com/asjsit/king-coin-api/6ee46785e24d3afe3f51b1bd9ea53d8e97d9fa55/docs/logo.svg"></img>
 </p>
+<p align=center>
+<a href="https://www.npmjs.com/package/king-coin-api"><img src="https://img.shields.io/npm/v/king-coin-api.svg?style=flat-square" alt="NPM version"></a>
+<a href="https://www.npmjs.com/package/king-coin-api"><img src="https://img.shields.io/npm/dt/king-coin-api.svg?style=flat-square" alt="NPM downloads"></a></p>
 <div align="center">
 
 **Модуль** для удобного использования **[King Coin API](https://kcbot.ru/docx/)**.

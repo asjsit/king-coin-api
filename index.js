@@ -41,7 +41,7 @@ class API {
 
         return data
     }
-
+    
     async sendCoins({ action = 'transfer', token = this.token, receiver = this.receiver, amount = this.amount, payload = this.payload } = {}) {
         const data = await axios.post(url, {
             action,
