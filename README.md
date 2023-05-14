@@ -1,3 +1,6 @@
+<p align=center>
+<img src="https://raw.githubusercontent.com/asjsit/king-coin-api/6ee46785e24d3afe3f51b1bd9ea53d8e97d9fa55/docs/logo.svg"></img>
+</p>
 <div align="center">
 
 **Модуль** для удобного использования **[King Coin API](https://kcbot.ru/docx/)**.
