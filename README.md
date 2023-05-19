@@ -24,8 +24,8 @@ $ npm install king-coin-api
 ## 🚀 Использование
 
 ```js
-const { API } = require('king-coin-api')
-const api = new API({ token: 'YOUR_TOKEN' }) // Ваш токен
+const { KingCoinApi } = require('king-coin-api')
+const api = new KingCoinApi({ token: 'YOUR_TOKEN' }) // Ваш токен
 
 // Получение баланса мерчанта
 async function getMyBalance() {
@@ -33,7 +33,11 @@ async function getMyBalance() {
     console.log(balance) // Выводим результат в консоль
 }
 getMyBalance() // Вызов функции
+```
 
+## 💸 Получение баланса пользователей
+
+```js
 // Получение баланса пользователей
 async function getUserBalance() {
     const user_ids = [657023844] // Создаем массив пользователей (до 1000)
@@ -41,19 +45,25 @@ async function getUserBalance() {
     console.log(userBalance) // Выводим результат в консоль
 }
 getUserBalance() // Вызов функции
+```
 
-// Получение историю переводов
+## 📄 Получение истории переводов
+
+```js
+// Получение истории переводов
 async function getHistory() {
     const history = await api.getHistory({ filter: "IN", count: 20 }) // Получаем 20 последних пополнений
     console.log(history) // Выводим результат в консоль
 }
 getHistory() // Вызов функции
+```
+## 💳 Перевод коинов пользователю
 
+```js
 //Перевод коинов пользователю
 async function sendCoins() {
     const send = await api.sendCoins({ receiver: 657023844, amount: 1 }) // Делаем перевод 1 коин
     console.log(send) // Выводим результат в консоль
 }
 sendCoins() // Вызов функции
-
 ```
