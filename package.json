@@ -1,6 +1,6 @@
 {
   "name": "king-coin-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Модуль для удобного использования KingCoin API",
   "main": "index.js",
   "scripts": {
