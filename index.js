@@ -1,36 +1,33 @@
 const { post } = require('axios')
-const url = 'https://kcbot.ru/server/api/'
 
 exports.KingCoinApi = class {
-    constructor({ token } = {}) {
+    constructor({token} = this) {
         this.token = token 
     }
-    callApi(data = {}) {
-        return post(url, data).then(data => data?.data).catch((err) => err)
+    callApi(data, token = this.token) {
+        return post("https://kcbot.ru/server/api/", {token, ...data}).then(({data}) => data)
     }
 
-    getMyBalance({ action = 'myBalance', token = this.token } = {}) {
-        return this.callApi({ action, token })
+    getMyBalance(action = 'myBalance') {
+        return this.callApi({ action })
     }
 
-    getUserBalance({ action = 'balance', token = this.token, user_ids = this.user_ids } = {}) {
-        return this.callApi({ action, token, user_ids })
+    getUserBalance({action = 'balance', user_ids = this.user_ids} = this) {
+        return this.callApi({ action, user_ids })
     }
 
-    getHistory({ action = 'tx', token = this.token, filter = this.filter, count = this.count, offset = this.offset } = {}) {
+    getHistory({ action = 'tx', filter = this.filter, count = this.count, offset = this.offset } = this) {
         return this.callApi({ 
             action,
-            token,
             filter: !filter ? 'ALL' : filter,
             count: !count ? 20 : count,
             offset: !offset ? 0 : offset
         })
     }
     
-    sendCoins({ action = 'transfer', token = this.token, receiver = this.receiver, amount = this.amount, payload = this.payload } = {}) {
+    sendCoins({action = 'transfer', receiver = this.receiver, amount = this.amount, payload = this.payload} = this) {
         return this.callApi({
             action,
-            token,
             receiver,
             amount,
             payload: !payload ? 0 : payload
